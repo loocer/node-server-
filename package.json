@@ -13,7 +13,7 @@
   "dependencies": {
     "crypto": "^0.0.3",
     "express": "^4.15.3",
-    "mysql": "^2.13.0",
+    "mysql": "^2.14.1",
     "pm2": "^2.6.1"
   },
   "devDependencies": {
