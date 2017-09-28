@@ -19,6 +19,14 @@ bookControl.add=function(app){
   	})
   })
 }
+bookControl.delete=function(app){
+  app.get('/delete-book',function(req,res){
+  	bookDao.delete(req.query).then(function(data){
+      res.status(200),
+      res.json(data)
+  	})
+  })
+}
 bookControl.update=function(app){
   app.get('/update-book',function(req,res){
   	bookDao.update(req.query).then(function(data){

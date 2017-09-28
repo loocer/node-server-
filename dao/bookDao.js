@@ -31,6 +31,19 @@ bookDao.add=function(data){
 		})
 	})
 }
+bookDao.delete=function(data){
+	return  new Promise(function(resolve,reject){
+	    jdbc.query('DELETE FROM account_book WHERE bid = '+data.bid, function (error, results, fields) {
+		    if (error) {
+		      return jdbc.rollback(function() {
+		        throw error
+		      });
+		    }else{
+		      resolve(results)
+		    }
+		})
+	})
+}
 bookDao.update=function(data){
 	return  new Promise(function(resolve,reject){
 	    jdbc.query('UPDATE account_book SET uid = ?, bdate = ?, baccount = ? ,bcategory = ?,bremark=? WHERE bid = ?',
