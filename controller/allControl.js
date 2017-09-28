@@ -1,6 +1,7 @@
 var allControl={}
 var userControl=require('./userControl');
-var managements=[userControl];
+var bookControl=require('./bookControl');
+var managements=[userControl, bookControl];
 allControl.setAllControl=function(app){
 	for(m in managements){
 		for(f in managements[m]){
